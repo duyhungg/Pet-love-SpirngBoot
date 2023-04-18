@@ -21,5 +21,5 @@ public class ThongTinDatCho {
     private String dichVu;
 
     // lấy giá từ bảng dịch vụ tại thời điểm hiện tại bỏ vào đây
-    private double giaDichVu;
+    private String giaDichVu;
 }

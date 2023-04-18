@@ -1,4 +1,4 @@
-package com.stc.petlove.dtos;
+package com.stc.petlove.dtos.datcho;
 
 import com.stc.petlove.entities.embedded.ThongTinDatCho;
 import lombok.AllArgsConstructor;
@@ -12,11 +12,9 @@ import java.util.List;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class DatChoDto {
-    private String id;
-
     private String email;
 
     private List<ThongTinDatCho> thongTinDatChos = new ArrayList<>();
@@ -26,6 +24,4 @@ public class DatChoDto {
     private String canDan;
 
     private String trangThaiDatCho;
-
-    private boolean trangThai = true;
 }

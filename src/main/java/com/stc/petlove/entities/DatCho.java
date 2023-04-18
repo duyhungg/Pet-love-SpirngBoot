@@ -21,6 +21,8 @@ import java.util.List;
  */
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Document(collection = "dat-cho")
 public class DatCho {
     @Id
@@ -41,20 +43,4 @@ public class DatCho {
     private String trangThaiDatCho;
 
     private boolean trangThai = true;
-//    Constructor
-
-    public DatCho(String id, String email, Date thoiGian, String canDan, String trangThaiDatCho, boolean trangThai) {
-        this.id = id;
-        this.email = email;
-        this.thongTinDatChos = thongTinDatChos;
-        this.thoiGian = thoiGian;
-        this.canDan = canDan;
-        this.trangThaiDatCho = trangThaiDatCho;
-        this.trangThai = trangThai;
-        thongTinDatChos.add(new ThongTinDatCho("dv1", new DichVu().getGiaDichVus().get(0).getGia() ));
-    }
-
-    public DatCho() {
-        thongTinDatChos.add(new ThongTinDatCho("dv1", new DichVu().getGiaDichVus().get(0).getGia() ));
-    }
 }

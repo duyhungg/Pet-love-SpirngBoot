@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
@@ -21,14 +20,16 @@ import java.util.List;
  */
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Document(collection = "dich-vu")
 public class DichVu {
     @Id
     private String id;
 
     // mã dịch vụ không được trùng
-    @Indexed(unique = true)
     private String maDichVu;
+
 
     private String tenDichVu;
 
@@ -39,20 +40,4 @@ public class DichVu {
     private List<GiaDichVu> giaDichVus = new ArrayList<>();
 
     private boolean trangThai = true;
-//    Constructor
-
-    public DichVu(String id, String maDichVu, String tenDichVu, String noiDung, boolean trangThai) {
-        this.id = id;
-        this.maDichVu = maDichVu;
-        this.tenDichVu = tenDichVu;
-        this.noiDung = noiDung;
-        this.trangThai = trangThai;
-        giaDichVus.add(new GiaDichVu("tc1", 10, 100));
-        giaDichVus.add(new GiaDichVu("tc2", 10, 200));
-    }
-
-    public DichVu() {
-        giaDichVus.add(new GiaDichVu("tc1", 10, 100));
-        giaDichVus.add(new GiaDichVu("tc2", 10, 200));
-    }
 }

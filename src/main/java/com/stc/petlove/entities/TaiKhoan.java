@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
@@ -31,7 +30,6 @@ public class TaiKhoan {
     private String name;
 
     // email không được trùng nhau
-    @Indexed(unique = true)
     private String email;
 
     @JsonIgnore
@@ -42,4 +40,11 @@ public class TaiKhoan {
     private List<String> roles = new ArrayList<>();
 
     private boolean trangThai = true;
+
+    public TaiKhoan(String name, String email, String password, List<String> roles) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
 }
